@@ -25,20 +25,6 @@ node{
         sh label: '', script: 'docker push sushantac/product-service:0.0.1'
     }
 
-    stage('Run container on Dev server'){
-        try{
-            sh label: '', script: 'docker stop product-service'
-        } catch(all) {
-
-        }
-        
-        try{
-            sh label: '', script: 'docker rm product-service'
-        } catch(all) {
-
-        }
-
-        sh label: '', script: 'docker run -d -p 8003:8003 --name product-service sushantac/product-service:0.0.1'
-    }
+    
     
 }
